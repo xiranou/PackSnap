@@ -2,8 +2,6 @@ class Forecast
 	attr_reader :latitude, :longitude, :time, :forecast
 
 	def initialize(location)
-		ForecastIO.api_key = ENV["forecastio"]
-		ForecastIO.default_params = {unit: "us"}
 		@latitude = location[:latitude]
 		@longitude = location[:longitude]
 		@time = Date.parse(location[:date]).to_time.to_i
